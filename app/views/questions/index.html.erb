@@ -6,20 +6,20 @@
   <div class="option1 col-sm-4">
     <%= form_for question, remote: true do |f| %>
     <%= f.hidden_field :option1_votes, :value => question.option1_votes + 1 %>
-    <%= f.submit 'Vote', :class => 'btn btn-success' %>
+    <span id="<%=question.id%>_button1"><%= f.submit 'Vote', :class => 'btn btn-success' %></span>
     <% end %>
     <p><%= question.option1 %> </p>
   </div>
   <div class="middle-content col-sm-4">
     <h1>OR</h1>
-    <div id="<%=question.id%>_percentages">
-    </div>
+    <span id="<%=question.id%>_percentages">
+    </span>
     <p>Total Votes: <span class="total-votes" id="<%=question.id%>_votes"><%= question.totalVotes %></span></p>
   </div>
   <div class="option2 col-sm-4">
     <%= form_for question, remote: true do |f| %>
     <%= f.hidden_field :option2_votes, :value => question.option2_votes + 1 %>
-    <%= f.submit 'Vote', :class => 'btn btn-success' %>
+    <span id="<%=question.id%>_button2"><%= f.submit 'Vote', :class => 'btn btn-success'%></span>
     <% end %>
     <p><%= question.option2 %></p>
   </div>

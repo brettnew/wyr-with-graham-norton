@@ -1,3 +1,5 @@
 alert('worked');
 $('#<%=@question.id%>_votes').text('<%= @question.totalVotes %>');
 $('#<%=@question.id%>_percentages').append('<p>Option 1: <%= @question.average(@question.option1_votes) %>%</p><p> Option 2: <%= @question.average(@question.option2_votes) %>%</p>');
+$("#<%=@question.id%>_button1").hide();
+$("#<%=@question.id%>_button2").hide();
