@@ -6,8 +6,10 @@ class QuestionsController < ApplicationController
 
   def update
     @question = Question.find(params[:id])
-    if @question.update(question_params)
-      redirect_to :back
+    @question.update(question_params)
+    respond_to do |format|
+      format.html {redirect_to :back}
+      format.js
     end
   end
 

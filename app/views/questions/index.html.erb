@@ -1,27 +1,27 @@
 <h1>Would you rather with GRAHAM NORTON!</h1>
 
 <% @questions.each do |question| %>
+<div class="question-div row">
   <h3>Would You Rather...</h3>
-  <div class="option1">
-    <%= form_for question do |f| %>
+  <div class="option1 col-sm-4">
+    <%= form_for question, remote: true do |f| %>
     <%= f.hidden_field :option1_votes, :value => question.option1_votes + 1 %>
     <%= f.submit 'Vote', :class => 'btn btn-success' %>
     <% end %>
     <p><%= question.option1 %> </p>
   </div>
-  <div class="middle-content">
+  <div class="middle-content col-sm-4">
     <h1>OR</h1>
-    <div class="percentage">
-      <p> Option 1: <%= question.average(question.option1_votes) %>%</p>
-      <p> Option 2: <%= question.average(question.option2_votes) %>%</p>
+    <div id="<%=question.id%>_percentages">
     </div>
-    <p>Total Votes: <%= question.totalVotes %></p>
+    <p>Total Votes: <span class="total-votes" id="<%=question.id%>_votes"><%= question.totalVotes %></span></p>
   </div>
-  <div class="option2">
-    <%= form_for question do |f| %>
+  <div class="option2 col-sm-4">
+    <%= form_for question, remote: true do |f| %>
     <%= f.hidden_field :option2_votes, :value => question.option2_votes + 1 %>
     <%= f.submit 'Vote', :class => 'btn btn-success' %>
     <% end %>
     <p><%= question.option2 %></p>
   </div>
+</div>
 <% end %>
