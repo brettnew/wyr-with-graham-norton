@@ -3,9 +3,17 @@
 <% @questions.each do |question| %>
   <h3>Would You Rather...</h3>
   <div class="option1">
+    <%= form_for question do |f| %>
+    <%= f.hidden_field :option1_votes, :value => question.option1_votes + 1 %>
+    <%= f.submit 'Vote', :class => 'btn btn-success' %>
+    <% end %>
     <p><%= question.option1 %> </p>
   </div>
   <div class="option2">
+    <%= form_for question do |f| %>
+    <%= f.hidden_field :option2_votes, :value => question.option2_votes + 1 %>
+    <%= f.submit 'Vote', :class => 'btn btn-success' %>
+    <% end %>
     <p><%= question.option2 %></p>
   </div>
   <p>Total Votes: <%= question.totalVotes %></p>
