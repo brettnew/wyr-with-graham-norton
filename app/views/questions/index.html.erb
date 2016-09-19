@@ -9,6 +9,14 @@
     <% end %>
     <p><%= question.option1 %> </p>
   </div>
+  <div class="middle-content">
+    <h1>OR</h1>
+    <div class="percentage">
+      <p> Option 1: <%= question.average(question.option1_votes) %>%</p>
+      <p> Option 2: <%= question.average(question.option2_votes) %>%</p>
+    </div>
+    <p>Total Votes: <%= question.totalVotes %></p>
+  </div>
   <div class="option2">
     <%= form_for question do |f| %>
     <%= f.hidden_field :option2_votes, :value => question.option2_votes + 1 %>
@@ -16,5 +24,4 @@
     <% end %>
     <p><%= question.option2 %></p>
   </div>
-  <p>Total Votes: <%= question.totalVotes %></p>
 <% end %>
