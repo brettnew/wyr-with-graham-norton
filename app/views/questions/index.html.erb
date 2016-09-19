@@ -1,4 +1,4 @@
-<h1>Would you rather with GRAHAM NORTON!</h1>
+<h1 class="title">Would you rather with GRAHAM NORTON!</h1>
 
 <% @questions.each do |question| %>
 <div class="question-div row">
@@ -13,7 +13,7 @@
     <% end %>
   </div>
   <div class="middle-content col-sm-4">
-    <h1>OR</h1>
+    <h2>OR</h2>
     <span id="<%=question.id%>_percentages">
     </span>
     <p>Total Votes: <span class="total-votes" id="<%=question.id%>_votes"><%= question.totalVotes %></span></p>

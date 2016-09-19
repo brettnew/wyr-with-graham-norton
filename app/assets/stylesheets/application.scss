@@ -1,12 +1,30 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  background: url('graham_nortons.jpg');
+  background-repeat: repeat;
+  font-size: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  margin: 30px;
+  font-size: 2em;
+}
 .question-div {
   margin-top: 10px;
   padding: 30px;
   border: solid 2px black;
+  background-color: white;
 }
 
 .selected-option {
-  background-color: yellow;
+  background: url('would_you_rather.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 100px;
+  color: white;
+  padding: 10px;
 }
