@@ -4,9 +4,18 @@ class CommentsController < ApplicationController
     @comment = @question.comments.new
   end
 
+  def index
+    @question = Question.find(params[:question_id])
+    @comments = @question.comments.page(params[:page])
+  end
+
   def create
     @question = Question.find(params[:question_id])
-    if @comment = @question.comments.create(comment_params)
+    @comment = @question.comments.new(comment_params)
+    if @comment.save
+      redirect_to :back
+    else
+      flash[:alert] = "Please fill in the username and content inputs."
       redirect_to :back
     end
   end
