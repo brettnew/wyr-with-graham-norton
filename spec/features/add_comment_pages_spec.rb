@@ -11,4 +11,12 @@ describe 'the add comments path' do
     expect(page).to have_content 'Stephanie said...'
     expect(page).to have_no_content 'Username'
   end
+
+  it 'will give you an error if you do not fill in all fields', js: true do
+    FactoryGirl.create(:question)
+    visit root_path
+    click_on 'Add Comment'
+    click_on 'Add Comment'
+    expect(page).to have_content 'Please fill in the username'
+  end
 end
