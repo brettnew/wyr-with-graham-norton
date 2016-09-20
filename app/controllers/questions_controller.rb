@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   def index
-    @questions = Question.all.page(params[:page])
+    @questions = Question.all.order('option1 asc').page(params[:page])
     @question = Question.new
   end
 

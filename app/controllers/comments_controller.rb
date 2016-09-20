@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
 
   def index
     @question = Question.find(params[:question_id])
-    @comments = @question.comments.page(params[:page])
+    @comments = @question.comments.page.per(10)
   end
 
   def create
