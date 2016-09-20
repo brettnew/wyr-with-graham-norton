@@ -6,7 +6,7 @@
   <div class="option1 col-sm-4">
     <%= form_for question, remote: true do |f| %>
     <%= f.hidden_field :option1_votes, :value => question.option1_votes + 1 %>
-    <span id="<%=question.id%>_button1"><%= f.submit 'Vote', :class => 'btn btn-success' %></span>
+    <span id="<%=question.id%>_button1"><%= f.submit 'Vote Option 1', :class => 'btn btn-success' %></span>
     <div id="<%=question.id%>_option1">
       <p><%= question.option1 %> </p>
     </div>
@@ -21,7 +21,7 @@
   <div class="option2 col-sm-4">
     <%= form_for question, remote: true do |f| %>
     <%= f.hidden_field :option2_votes, :value => question.option2_votes + 1 %>
-    <span id="<%=question.id%>_button2"><%= f.submit 'Vote', :class => 'btn btn-success'%></span>
+    <span id="<%=question.id%>_button2"><%= f.submit 'Vote Option 2', :class => 'btn btn-success'%></span>
     <div id="<%=question.id%>_option2">
       <p><%= question.option2 %></p>
     </div>
